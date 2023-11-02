@@ -22,9 +22,6 @@ public class Project {
             System.out.println("Enter project name: ");
             String projectName = sc.nextLine();
 
-            System.out.println("Enter project description: ");
-            String description = sc.nextLine();
-
             System.out.println("Enter project start date (yyyy-MM-dd): ");
             String startDate = sc.nextLine();
 
@@ -34,8 +31,8 @@ public class Project {
             System.out.println("Enter project status: ");
             String status = sc.nextLine();
 
-            String insert = "INSERT INTO project (project_name, description, start_date, end_date, status) " +
-                            "VALUES ('" + projectName + "', '" + description + "', '" + startDate + "', '" + endDate + "', '" + status + "')";
+            String insert = "INSERT INTO project (project_name, start_date, end_date, status) " +
+                            "VALUES ('" + projectName + "','" + startDate + "', '" + endDate + "', '" + status + "')";
 
             int row = st.executeUpdate(insert);
             System.out.println(row + " project details added successfully!!");
@@ -58,9 +55,6 @@ public class Project {
             System.out.println("Enter new project name: ");
             String projectName = sc.nextLine();
 
-            System.out.println("Enter new project designation: ");
-            String description = sc.nextLine();
-
             System.out.println("Enter new project start date (yyyy-MM-dd): ");
             String startDate = sc.nextLine();
 
@@ -72,7 +66,6 @@ public class Project {
 
             String update = "UPDATE project " +
                     "SET project_name = '" + projectName + "', " +
-                    "designation = '" + description + "', " +
                     "start_date = '" + startDate + "', " +
                     "end_date = '" + endDate + "', " +
                     "status = '" + status + "' " +
@@ -98,7 +91,6 @@ public class Project {
             while (rs.next()) {
                 System.out.println("Project ID: " + rs.getInt("project_id"));
                 System.out.println("Project Name: " + rs.getString("project_name"));
-                System.out.println("description: " + rs.getString("description"));
                 System.out.println("Start Date: " + rs.getString("start_date"));
                 System.out.println("End Date: " + rs.getString("end_date"));
                 System.out.println("Status: " + rs.getString("status"));

@@ -42,11 +42,11 @@ public class Employee {
 
             sc.nextLine(); 
 
-            System.out.println("Enter employee password: ");
-            String password = sc.nextLine();
+            // System.out.println("Enter employee password: ");
+            // String password = sc.nextLine();
 
-            String insert = "INSERT INTO employee (emp_name, designation, salary, email, phone_no, joining_date, role_id, password) " +
-                            "VALUES ('" + empName + "', '" + designation + "', " + salary + ", '" + email + "', '" + phoneNo + "', '" + joiningDate + "', " + roleId + ", '" + password + "')";
+            String insert = "INSERT INTO employee (emp_name, designation, salary, email, phone_no, joining_date, role_id) " +
+                            "VALUES ('" + empName + "', '" + designation + "', " + salary + ", '" + email + "', '" + phoneNo + "', '" + joiningDate + "', " + roleId + " )";
 
             int row = st.executeUpdate(insert);
             System.out.println(row + " employee details added successfully!!");
@@ -89,9 +89,7 @@ public class Employee {
             System.out.println("Enter new employee role ID: ");
             int roleId = sc.nextInt();
 
-            sc.nextLine();
-            System.out.println("Enter new employee password: ");
-            String password = sc.nextLine();
+            
 
             String update = "UPDATE employee " +
                     "SET emp_name = '" + empName + "', " +
@@ -101,7 +99,6 @@ public class Employee {
                     "phone_no = '" + phoneNo + "', " +
                     "joining_date = '" + joiningDate + "', " +
                     "role_id = " + roleId + ", " +
-                    "password = '" + password + "' " +
                     "WHERE emp_id = " + empId;
 
             int row = st.executeUpdate(update);
@@ -130,7 +127,6 @@ public class Employee {
                 System.out.println("Phone Number: " + rs.getString("phone_no"));
                 System.out.println("Joining Date: " + rs.getString("joining_date"));
                 System.out.println("Role ID: " + rs.getInt("role_id"));
-                System.out.println("Password: " + rs.getString("password"));
                 System.out.println("=================================");
                 System.out.println();
             }

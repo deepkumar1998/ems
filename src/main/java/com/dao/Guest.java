@@ -79,14 +79,13 @@ public class Guest {
 		            System.out.println("Enter project ID: ");
 		            int projectId = sc.nextInt();
 
-		            String query = "SELECT project_id, project_name, designation, start_date, end_date, status " +
+		            String query = "SELECT project_id, project_name, start_date, end_date, status " +
 		                           "FROM project WHERE project_id = " + projectId;
 
 		            ResultSet rs = st.executeQuery(query);
 		            if (rs.next()) {
 		                System.out.println("Project ID: " + rs.getInt("project_id"));
 		                System.out.println("Project Name: " + rs.getString("project_name"));
-		                System.out.println("Designation: " + rs.getString("designation"));
 		                System.out.println("Start Date: " + rs.getString("start_date"));
 		                System.out.println("End Date: " + rs.getString("end_date"));
 		                System.out.println("Status: " + rs.getString("status"));
